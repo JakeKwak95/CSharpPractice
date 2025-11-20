@@ -21,7 +21,7 @@ public class DataTypes : MonoBehaviour
 		score = 10;
 		speed = 7.2f;
 		isGameOver = true;
-		playerName = "Kwak";
+		playerName = "New Player";
 
 		Debug.Log("=== After Update ===");
 		Debug.Log($"Score: {score}, Speed: {speed}, GameOver: {isGameOver}, Name: {playerName}");
