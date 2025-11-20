@@ -5,19 +5,22 @@ public class ParameterKeywords : MonoBehaviour
 	int a = 5;
 	int b = 6;
 
+	// **호출 할때는 인자(argument)라고 부르고, 선언할 때는 매개변수(parameter)라고 부름
+	// 하지만, 혼용해서 쓰는 경우가 많음(보통 매개변수(parameter)라고 많이 씀)
+
 	private void Start()
 	{
 		Debug.Log("=== Parameter Keywords Example ===");
 
-		// 기본 매개변수 전달 (by value)
+		// 변수 값 인자로 전달 (by value)
 		Debug.Log("Before: " + a);
 		DoubleValue(a);
-		Debug.Log("After: " + a); // 매개 변수로 넘겨진 변수는 그 값만 함수 내에서만 존재하는 지역 변수에 사용되어 a의 값은 변하지 않음
+		Debug.Log("After: " + a); // 인자로 넘겨진 변수는 그 값만 함수 내에서만 존재하는 지역 변수에 사용되어 a의 값은 변하지 않음
 
 		// ref 예제
 		Debug.Log("Before Ref: " + b);
 		DoubleValueRef(ref b);
-		Debug.Log("After Ref: " + b); // ref 키워드를 붙이면 매개 변수의 값이 아닌 매개변수 자체를 전달, b 값이 메소드 안에서 바뀜
+		Debug.Log("After Ref: " + b); // ref 키워드를 붙이면 인자의 값이 아닌 인자 자체를 전달, b 값이 메소드 안에서 바뀜
 
 		// 복사본과 원본을 넘기는 것의 차이라고 생각하면 됨
 
