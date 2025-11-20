@@ -45,7 +45,7 @@ public class PropertyUsage : MonoBehaviour
 
 	private void Start()
 	{
-		int level = otherExample.Level; // 다른 클래스에서 프로퍼티 값 읽기 가능
+		// int level = otherExample.Level; // 다른 클래스에서 프로퍼티 값 읽기 가능
 		// otherExample.Level = 5; // 오류 발생: set 접근자가 private이기 때문
 	}
 
