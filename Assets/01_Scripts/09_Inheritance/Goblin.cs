@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Goblin : EnemyBase
 {
+	// EnemyBase를 상속 받는 모든 클래스는 EnemyBase 타입의 참조 변수를 사용할 수 있습니다.
 	public EnemyBase otherEnemyToAttack; // 다른 적을 공격하기 위한 참조 변수
 
 	private void Start()

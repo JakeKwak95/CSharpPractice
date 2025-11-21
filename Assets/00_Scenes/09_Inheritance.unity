@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &704310113
+--- !u!1 &410789309
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,36 +127,82 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 704310115}
-  - component: {fileID: 704310114}
+  - component: {fileID: 410789311}
+  - component: {fileID: 410789310}
   m_Layer: 0
-  m_Name: Goblin (1)
+  m_Name: Slime_Attacked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &704310114
+--- !u!114 &410789310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704310113}
+  m_GameObject: {fileID: 410789309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddac8fd37e391d644aa609b530da9de9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f253349351ba8648b01e64938899493, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Goblin
-  hp: 50
-  otherEnemyToAttack: {fileID: 0}
---- !u!4 &704310115
+  m_EditorClassIdentifier: Assembly-CSharp::Slime
+  hp: 15
+  slimeToShareDamage: {fileID: 488755267}
+--- !u!4 &410789311
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704310113}
+  m_GameObject: {fileID: 410789309}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &488755266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488755268}
+  - component: {fileID: 488755267}
+  m_Layer: 0
+  m_Name: Slime_Sharing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &488755267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488755266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f253349351ba8648b01e64938899493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Slime
+  hp: 5
+  slimeToShareDamage: {fileID: 0}
+--- !u!4 &488755268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488755266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -195,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Goblin
   hp: 50
-  otherEnemyToAttack: {fileID: 704310114}
+  otherEnemyToAttack: {fileID: 410789310}
 --- !u!4 &1841710070
 Transform:
   m_ObjectHideFlags: 0
@@ -354,4 +400,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1881815090}
   - {fileID: 1841710070}
-  - {fileID: 704310115}
+  - {fileID: 410789311}
+  - {fileID: 488755268}
