@@ -15,7 +15,7 @@ public abstract class EnemyBase : MonoBehaviour
 		Debug.Log($"{name}: Attack {enemy.name}! Power: {attackPower}");
 		enemy.TakeDamage(attackPower);
 	}
-	void TakeDamage(int amount) // 가상 메서드: 서브 클래스에서 재정의(오버라이드) 가능
+	public virtual void TakeDamage(int amount) // 가상 메서드: 서브 클래스에서 재정의(오버라이드) 가능
 	{
 		hp -= amount;
 		Debug.Log($"{name} TakeDamage! Amount: {amount} / Current HP: {hp}");
