@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DelegateExampleUsage : MonoBehaviour
 {
-	public BasicDelegate basicDelegateInstance;
+	public DelegateExample basicDelegateInstance;
 
 	public MulticastDelegate multicastDelegateInstance;
 
@@ -10,7 +10,7 @@ public class DelegateExampleUsage : MonoBehaviour
 	{
 		if (basicDelegateInstance)
 		{
-			BasicDelegate.SimpleDelegateForOtherClass delInstance = ExampleMethod;
+			DelegateExample.SimpleDelegateForOtherClass delInstance = ExampleMethod;
 			delInstance();
 		}
 

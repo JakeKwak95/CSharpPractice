@@ -3,7 +3,7 @@ using UnityEngine;
 // 기본적인 델리게이트 사용 예제
 // 델리게이트는 메서드 참조를 저장할 수 있는 타입 안전한 함수 포인터입니다.
 // 메서드를 변수에 할당하거나 다른 메서드에 전달할 수 있습니다.
-public class BasicDelegate : MonoBehaviour
+public class DelegateExample : MonoBehaviour
 {
 	// 델리게이트 선언
 	// 반환형과 매개변수 목록이 메서드 서명과 일치해야 합니다.
