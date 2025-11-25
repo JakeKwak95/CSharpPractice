@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &613281737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &780007119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +211,8 @@ MonoBehaviour:
   textArea: 
   stamina: 10
   exampleEnum: 3
+  hiddenVariable: 100
+  <SomeProperty>k__BackingField: 10
 --- !u!65 &780007120
 BoxCollider:
   m_ObjectHideFlags: 0
