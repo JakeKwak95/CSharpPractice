@@ -18,20 +18,25 @@ public class CoroutineExample : MonoBehaviour
 {
 	private void Start()
 	{
-		StartCoroutine(CoPrintNumbers());
+		StartCoroutine(CoPrintNumbers(5));
 		StartCoroutine(CoChangeColor());
+		// 메서드 이름 문자열을 사용하여 코루틴 시작 가능
+		// 이 경우 매개변수 전달 불가
+		// nameof : 컴파일 시점에 메서드 이름을 문자열로 변환
+		// StartCoroutine(nameof(CoChangeColor));
 	}
 
 	// 코루틴 메서드
 	// IEnumerator 반환 타입을 사용
-	private IEnumerator CoPrintNumbers()
+	// 매개변수 사용 가능
+	private IEnumerator CoPrintNumbers(int end)
 	{
 		Debug.Log("시작!");
 
-		for (int i = 1; i <= 5; i++)
+		for (int i = 1; i <= end; i++)
 		{
 			Debug.Log($"숫자 : {i}");
-			yield return new WaitForSeconds(1f); // 1초 대기
+			yield return new WaitForSeconds(1f); // 1초 대기, 게임의 쿨타임과 같은 기능을 만들 수 있음
 		}
 
 		Debug.Log("끝!");
