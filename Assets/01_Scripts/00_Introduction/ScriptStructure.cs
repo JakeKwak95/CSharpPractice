@@ -46,6 +46,7 @@ public class ScriptStructure : MonoBehaviour // MonoBehaviour를 상속받아 Unity �
 	/// <summary>
 	/// 플레이어의 체력을 특정 수치로 회복시키는 메서드
 	/// </summary>
+	/// <param name="amount"></param>
 	public void Heal(int amount)
 	{
 		health += amount;

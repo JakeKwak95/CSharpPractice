@@ -16,7 +16,7 @@ public class StringPractice : MonoBehaviour
 		// 문자열 보간 (interpolation)
 		// $"..." 내부의 { } 안에는 변수나 계산식, 메서드 호출 등 임의의 C# 표현식을 넣을 수 있다. 가독성이 좋아서 + 연산보다 자주 사용된다.
 		string fullName2 = $"{firstName} {lastName}";
-		Debug.Log($"Full Name (interpolation) : {fullName2}");
+		Debug.Log($"Full Name (보간) : {fullName2}");
 
 		// ToUpper / ToLower
 		Debug.Log("Uppercase : " + fullName1.ToUpper());
