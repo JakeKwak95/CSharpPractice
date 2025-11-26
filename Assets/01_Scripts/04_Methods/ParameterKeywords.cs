@@ -10,8 +10,6 @@ public class ParameterKeywords : MonoBehaviour
 
 	private void Start()
 	{
-		Debug.Log("=== Parameter Keywords Example ===");
-
 		// 변수 값 인자로 전달 (by value)
 		Debug.Log("Before: " + a);
 		DoubleValue(a);

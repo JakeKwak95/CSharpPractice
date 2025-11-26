@@ -9,13 +9,13 @@ public class BasicMethods : MonoBehaviour
 	private void Start()
 	{
 		// Debug.Log 도 메소드의 한 종류
-		Debug.Log("=== Basic Methods Example ===");
+		Debug.Log("Basic Methods Example");
 
 		// 반환값 없는 메소드 호출
 		SayHello();
 
 		// 반환값 있는 메소드 호출
-		Debug.Log($"Pi value is: {GetPiValue()}");
+		Debug.Log($"Pi 값은 : {GetPiValue()}");
 
 		// 매개변수 있는 메소드 호출
 		int sumResult = AddNumbers(a, b);
@@ -30,7 +30,7 @@ public class BasicMethods : MonoBehaviour
 	void SayHello()
 	{
 		// 특정한 로직을 메서드 안에 작성하여 재사용 가능
-		Debug.Log("Hello! This is a basic method.");
+		Debug.Log("Hello! 간단한 메서드야.");
 	}
 
 	// 반환값 있는 메소드

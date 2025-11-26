@@ -11,7 +11,6 @@ public class DataTypes : MonoBehaviour
 	// Start는 게임이 시작될 때 실행
 	void Start()
 	{
-		Debug.Log("=== Data Types Example ===");
 		Debug.Log("Score: " + score);
 		Debug.Log("Speed: " + speed);
 		Debug.Log("Is Game Over? " + isGameOver);
@@ -23,7 +22,7 @@ public class DataTypes : MonoBehaviour
 		isGameOver = true;
 		playerName = "New Player";
 
-		Debug.Log("=== After Update ===");
+		Debug.Log("변경 후");
 		Debug.Log($"Score: {score}, Speed: {speed}, GameOver: {isGameOver}, Name: {playerName}");
 	}
 }

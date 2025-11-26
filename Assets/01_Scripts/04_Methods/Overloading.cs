@@ -8,7 +8,6 @@ public class Overloading : MonoBehaviour
 {
 	private void Start()
 	{
-		Debug.Log("=== Method Overloading Example ===");
 		// 동일한 메소드 이름이지만 매개변수의 타입과 개수가 다름
 		// 컴파일러는 호출 시점에 전달된 인자(전달하는 매개변수)에 따라 적절한 메소드를 선택
 

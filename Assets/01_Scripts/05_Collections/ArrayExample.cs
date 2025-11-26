@@ -8,7 +8,7 @@ public class ArrayExample : MonoBehaviour
 	private void Start()
 	{
 		// 배열 초기화 메소드 호출
-		InitializeArray(intArray); // 배열은 참조 타입이므로 메소드 내에서 값 변경 가능 (추후 값 타입과 참조 타입에 대해 다룸)
+		InitializeArray(intArray); // 배열은 참조 타입이므로 메소드 내에서 값 변경 가능
 
 		// 배열 요소 접근 및 출력
 		GetArrayMember(0);
@@ -33,15 +33,16 @@ public class ArrayExample : MonoBehaviour
 
 	private void ChangeArrayMemberValue(int index, int newValue)
 	{
+		if (intArray.Length <= index) return;
+
 		intArray[index] = newValue;
 		Debug.Log($"배열 값 변경[{index}]: {intArray[index]}");
 	}
 
-	// 순서 : 예외 발생 후 방지 코드 주석 처리 풀기
 	private void GetArrayMember(int index)
 	{
 		// 배열의 길이를 넘어가는 인덱스 접근 방지
-		// if (intArray.Length <= index) return;
+		if (intArray.Length <= index) return;
 
 		Debug.Log($"배열 접근[{index}]: {intArray[index]}");
 	}

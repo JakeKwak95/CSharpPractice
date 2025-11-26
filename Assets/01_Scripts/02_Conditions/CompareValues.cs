@@ -21,6 +21,12 @@ public class CompareValues : MonoBehaviour
 			Debug.Log("두 점수는 다릅니다!");
 		}
 
+		// !=
+		if (integerA != integerB)
+		{
+			Debug.Log("IntegerA 와 IntegerB 는 같지 않습니다.");
+		}
+
 		// >, <
 		if (integerA > integerB)
 		{
@@ -30,17 +36,15 @@ public class CompareValues : MonoBehaviour
 		{
 			Debug.Log("IntegerB 가 더 큽니다!");
 		}
+		else
+		{
+			Debug.Log("두 점수는 같습니다!");
+		}
 
 		// >=, <=
 		if (integerA >= 10)
 		{
 			Debug.Log("IntegerA 가 10 이상입니다.");
-		}
-
-		// !=
-		if (integerA != integerB)
-		{
-			Debug.Log("IntegerA 와 IntegerB 는 같지 않습니다.");
 		}
 
 		// 서로 다른 자료형 비교

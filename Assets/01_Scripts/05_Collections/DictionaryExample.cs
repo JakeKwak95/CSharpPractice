@@ -18,7 +18,8 @@ public class DictionaryExample : MonoBehaviour
 		RemoveItemFromInventory("Potion", 10);
 		RemoveItemFromInventory("Potion", 1); 
 
-		AddItemToInventory("Elixir", 2);
+		AddItemToInventory("Wood", 1);
+		AddItemToInventory("Stone", 2);
 
 		foreach (var item in inventory)
 		{

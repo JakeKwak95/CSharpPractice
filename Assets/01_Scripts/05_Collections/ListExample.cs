@@ -28,9 +28,11 @@ public class ListExample : MonoBehaviour
 			Debug.Log("적 발견: " + enemy);
 		}
 
+		Debug.Log("첫 번째 적은: " + enemies[0]);
+
 		// List에서 요소 제거
 		enemies.Remove("Goblin");
-		Debug.Log("Goblin 제거 후 리스트 크기: " + enemies.Count);
+		Debug.Log("Goblin 제거 후 적 수: " + enemies.Count);
 
 		if (enemies.Contains("Goblin"))
 		{
@@ -42,7 +44,7 @@ public class ListExample : MonoBehaviour
 		}
 
 		enemies.Remove("Orc"); // 첫 번째 Orc만 제거
-		Debug.Log("Orc 하나 제거 후 리스트 크기: " + enemies.Count);
+		Debug.Log("Orc 하나 제거 후 적 수: " + enemies.Count);
 
 		if (enemies.Contains("Orc"))
 		{
@@ -60,7 +62,7 @@ public class ListExample : MonoBehaviour
 		}
 
 		enemies.RemoveAt(0); // 인덱스로 요소 제거
-	    Debug.Log("인덱스 0 요소 제거 후 리스트 크기: " + enemies.Count);
+	    Debug.Log("인덱스 0 요소 제거 후 적 수: " + enemies.Count);
 
 		// 최종 리스트 출력
 		foreach (string enemy in enemies)

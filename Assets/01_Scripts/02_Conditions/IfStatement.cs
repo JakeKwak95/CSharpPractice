@@ -7,7 +7,19 @@ public class IfStatement : MonoBehaviour
 
 	private void Start()
 	{
-		Debug.Log("플레이어 체력: " + playerHealth);
+		if (true)
+		{
+			Debug.Log("플레이어 체력: " + playerHealth);
+		}
+		else
+		{
+			Debug.Log("이 메시지는 절대 출력되지 않습니다.");
+		}
+
+		if (false)
+		{
+			Debug.Log("이 메시지도 절대 출력되지 않습니다.");
+		}
 	}
 
 	private void Update()
@@ -17,11 +29,11 @@ public class IfStatement : MonoBehaviour
 		{
 			Debug.Log("플레이어가 건강합니다");
 		}
-		else if(playerHealth >= 50)
+		else if (playerHealth >= 50)
 		{
 			Debug.Log("플레이어가 부상을 입었습니다.");
 		}
-		else if(playerHealth > 0 && playerHealth < 50) // 논리 연산자 AND
+		else if (playerHealth > 0 && playerHealth < 50) // 논리 연산자 AND
 		{
 			// 콘솔에 경고 메시지 출력
 			Debug.LogWarning("플레이어가 위험합니다.");

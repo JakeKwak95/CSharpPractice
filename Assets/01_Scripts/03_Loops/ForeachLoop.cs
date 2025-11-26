@@ -4,8 +4,7 @@ public class ForeachLoop : MonoBehaviour
 {
 	private void Start()
 	{
-		Debug.Log("=== Foreach 문 예제 ===");
-
+		// 배열 : 여러 개의 같은 타입 데이터를 하나의 변수에 저장하는 자료구조
 		string[] enemies = { "Slime", "Goblin", "Orc" };
 
 		// 배열이나 컬렉션의 각 요소를 순회할 때 사용
@@ -17,11 +16,13 @@ public class ForeachLoop : MonoBehaviour
 
 		int[] scores = { 10, 20, 30, 40 };
 		int totalScore = 0;
+
 		foreach (int score in scores)
 		{
 			Debug.Log("얻은 점수: " + score);
 			totalScore += score;
 		}
+
 		Debug.Log("총 점수: " + totalScore);
 
 		// foreach 문은 읽기 전용이므로 요소를 수정할 수 없음

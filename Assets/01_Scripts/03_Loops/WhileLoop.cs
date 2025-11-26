@@ -4,8 +4,6 @@ public class WhileLoop : MonoBehaviour
 {
 	private void Start()
 	{
-		Debug.Log("=== While 문 예제 ===");
-
 		int count = 0;
 
 		// 괄호 안의 조건이 참인 동안 반복
@@ -50,7 +48,6 @@ public class WhileLoop : MonoBehaviour
 		while (number < 3);
 
 		// While vs Do While 차이 예제
-		Debug.Log("=== While vs Do While 차이 예제 ===");
 
 		int a = 5;
 

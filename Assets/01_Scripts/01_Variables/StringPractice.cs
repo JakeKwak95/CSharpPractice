@@ -7,8 +7,6 @@ public class StringPractice : MonoBehaviour
 
 	void Start()
 	{
-		Debug.Log("=== String Practice ===");
-
 		// 문자열 합치기
 		string fullName1 = firstName + " " + lastName;
 		Debug.Log("Full Name (+) : " + fullName1);
