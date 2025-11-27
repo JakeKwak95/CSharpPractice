@@ -28,7 +28,7 @@ public class PropertyBasic : MonoBehaviour
 		set => mp = value;
 	}
 
-	int exp { get; set; } // 자동 구현 프로퍼티
+	int Exp { get; set; } // 자동 구현 프로퍼티
 
 	// 위 3가지 형태 모두 동일한 기능을 수행
 
@@ -36,5 +36,11 @@ public class PropertyBasic : MonoBehaviour
 	{
 		Hp = 100; // set 접근자 사용
 		Debug.Log($"현재 Hp: {Hp}"); // get 접근자 사용
+
+		Mp = 50;
+		Debug.Log($"현재 Mp: {Mp}");
+
+		Exp = 200;
+		Debug.Log($"현재 Exp: {Exp}");
 	}
 }
