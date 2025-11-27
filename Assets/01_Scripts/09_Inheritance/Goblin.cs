@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Goblin : EnemyBase
@@ -12,11 +13,10 @@ public class Goblin : EnemyBase
 	}
 
 	// override 키워드를 사용하여 추상 메서드 Init을 구현
-
 	public override void Init()
 	{
 		attackPower = 15;
-		Debug.Log($"{name} Goblin Initialized! HP: {hp}, Attack Power: {attackPower}");
+		Debug.Log($"{name}: 초기화! HP: {hp}, 공격력 : {attackPower}");
 	}
 
 	// override 키워드를 사용하여 보호된 메서드 Attack을 재정의
@@ -24,7 +24,7 @@ public class Goblin : EnemyBase
 	{
 		if (!enemy) return; // ()괄호 안에 참조 변수를 넣어 null 체크
 
-		Debug.Log($"{name} Goblin is attacking!");
+		Debug.Log($"{name}: 공격합니다!");
 		base.Attack(enemy); // base : 부모 클래스
 							// 부모 클래스의 Attack 메서드 호출
 	}

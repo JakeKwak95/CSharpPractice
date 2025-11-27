@@ -15,7 +15,7 @@ public class Slime : EnemyBase
 	public override void Init()
 	{
 		attackPower = 0;
-		Debug.Log($"{name} Slime Initialized! HP: {hp}, Attack Power: {attackPower}");
+		Debug.Log($"{name}: 초기화! HP: {hp}, 공격력 : {attackPower}");
 	}
 
 	public override void TakeDamage(int amount)
@@ -24,7 +24,7 @@ public class Slime : EnemyBase
 		if (slimeToShareDamage)
 		{
 			amount /= 2; // 데미지를 반으로 나눔
-			Debug.Log($"{name} is sharing damage with {slimeToShareDamage.name}!");
+			Debug.Log($"{name}이/가 {slimeToShareDamage.name}과/와 데미지를 나눕니다!");
 			slimeToShareDamage.TakeDamage(amount); // 다른 슬라임도 데미지를 받음
 		}
 

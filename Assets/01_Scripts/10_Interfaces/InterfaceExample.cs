@@ -15,7 +15,7 @@ public class InterfaceExample : MonoBehaviour, ITestable
 		// 다른 게임 오브젝트에서 ITestable 인터페이스를 구현한 컴포넌트를 가져옴
 		// TryGetComponent 메서드는 컴포넌트가 존재하면 true를 반환하고, 없으면 false를 반환
 		// out 키워드는 메서드가 반환하는 값을 저장할 변수를 지정
-		if (otherGameObject && otherGameObject.TryGetComponent(out testableInstance))
+		if (otherGameObject != null && otherGameObject.TryGetComponent(out testableInstance))
 		{
 			Debug.Log($"{name} : 다른 게임 오브젝트에서 ITestable 인터페이스를 구현한 컴포넌트를 찾았습니다.");
 			// 인터페이스 메서드 호출

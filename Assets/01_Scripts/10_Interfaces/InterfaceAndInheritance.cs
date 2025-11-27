@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InterfaceVsInheritance : MonoBehaviour
+public class InterfaceAndInheritance : MonoBehaviour
 {
 	// 클래스를 상속받은 경우 인스펙터에서 할당 할 수 있다
 	public ExampleBirdBase[] exampleBirdBases;
