@@ -4,7 +4,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 
 // 해당 컴포넌트가 추가된 게임 오브젝트에 특정 컴포넌트가 반드시 존재하도록 요구
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 
 // 프리펩 편집 모드와 에딧 모드 모두에서 스크립트가 실행되도록 함
 [ExecuteAlways]
@@ -48,7 +48,7 @@ public class UnityAttributes : MonoBehaviour
 	[SerializeField] float stamina = 10f;
 
 	// Inspector에서 열거형을 버튼 형태로 표시
-	[SerializeField, EnumButtons] ExampleEnum exampleEnum;
+	[EnumButtons] public ExampleEnum exampleEnum;
 
 	// Inspector에서 변수 숨기기
 	[HideInInspector] public float hiddenVariable = 100f;

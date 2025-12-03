@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum BirdType
@@ -31,19 +32,25 @@ public class FactoryPattern : MonoBehaviour
 	public ExampleBirdBase CreateBird(BirdType type, Vector3 pos, Quaternion rot, Transform parent = null)
 	{
 		// 타입의 이름으로 새로운 게임 오브젝트를 생성합니다.
-		GameObject bird = new GameObject(type.ToString());
+		GameObject bird = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		bird.name = type.ToString();
 		// 위치와 회전을 설정하고 부모를 지정합니다.
 		bird.transform.SetPositionAndRotation(pos, rot);
 		bird.transform.SetParent(parent);
+
+		Material material = bird.GetComponent<Renderer>().material;
 
 		// 지정된 타입에 따라 적절한 컴포넌트를 추가하고 반환합니다.
 		switch (type)
 		{
 			case BirdType.Duck:
+				material.color = Color.yellow;
 				return bird.AddComponent<ExampleDuck>();
 			case BirdType.Eagle:
+				material.color = Color.gray;
 				return bird.AddComponent<ExampleEagle>();
 			case BirdType.Penguin:
+				material.color = Color.white;
 				return bird.AddComponent<ExamplePenguin>();
 		}
 

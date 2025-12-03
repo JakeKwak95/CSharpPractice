@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 // 제네릭 : 타입에 대한 일반화된 코드를 작성할 수 있도록 해주는 기능
@@ -25,23 +26,25 @@ public class GenericExample : MonoBehaviour
 			Debug.Log("Rigidbody 컴포넌트를 찾을 수 없습니다.");
 		}
 
-		GetRandomItemFromArray(new int[] { 1, 2, 3, 4, 5 });
-		GetRandomItemFromArray(new string[] { "사과", "바나나", "체리", "포도" });
+		var randomInt = GetRandomItemFromArray(new int[] { 1, 2, 3, 4, 5 });
+		Debug.Log($"가챠! : {randomInt}");
+		var randomString = GetRandomItemFromArray(new string[] { "사과", "바나나", "체리", "포도" });
+		Debug.Log($"가챠! : {randomString}");
 
 		// 제네릭 제약조건 사용 예시
 		// ExampleBirdBase를 상속받지 않은 GenericExample 클래스는 사용 불가
 		// ***MonoBehaviour를 상속받은 클래스는 new 키워드로 인스턴스화하지 않지만, 제약 조건을 보여주기 위해 예시로 작성***
 		// ExampleBirdBase notBird = GetIfBird<ExampleBirdBase>(new GenericExample()); // 오류 발생
-		// ExampleBirdBase bird = GetIfBird<ExampleBirdBase>(new ExampleDuck());
+		 ExampleBirdBase bird = GetIfBird<ExampleBirdBase>(new ExampleDuck());
 	}
 
 	// 제네릭 메서드 예시
-	// 배열에서 랜덤한 아이템을 출력하는 메서드(어떤 타입이든 가능)
-	void GetRandomItemFromArray<T>(T[] array)
+	// 배열에서 랜덤한 아이템을 반환하는 메서드(어떤 타입이든 가능)
+	T GetRandomItemFromArray<T>(T[] array)
 	{
 		int randomIndex = Random.Range(0, array.Length);
 		T randomItem = array[randomIndex];
-		Debug.Log($"가챠! : {randomItem}");
+		return randomItem;
 	}
 
 	// 제네릭 제약조건 예시
@@ -51,4 +54,26 @@ public class GenericExample : MonoBehaviour
 	{
 		return item;
 	}
+
+	void ClassT <T>() where T : class
+	{
+		// T는 참조형식이어야 함
+	}
+	void StructT <T>() where T : struct
+	{
+		// T는 값형식이어야 함
+	}
+	void NewT <T>() where T : new()
+	{
+		// T는 매개변수가 없는 생성자가 있어야 함
+	}
+	void MonoBehaviourT<T>() where T : MonoBehaviour
+	{
+		// T는 MonoBehaviour를 상속받은 클래스여야 함
+	}
+	void InterfaceT <T>() where T : ISwimable
+	{
+		// T는 ISwimable 인터페이스를 구현한 타입이어야 함
+	}	
+
 }

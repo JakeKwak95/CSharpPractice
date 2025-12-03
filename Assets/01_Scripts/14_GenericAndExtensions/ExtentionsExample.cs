@@ -3,21 +3,29 @@ using UnityEngine;
 
 public class ExtentionsExample : MonoBehaviour
 {
+	[SerializeField] Vector3 exampleVector3;
+
+	[SerializeField] List<string> exampleNames;
+	[SerializeField] List<int> exampleNumbers;
+
 	[ContextMenu("Ivoke Start Method")]
 	void Start()
 	{
-		Vector3 exampleVector3 = new(3f, 4f, 0f); // 타입 생략 가능
 		Debug.Log($"Vector3의 가장 큰 값은 : {exampleVector3.GetLargest()}");
 
-		List<string> names = new() { "Alice", "Bob", "Charlie", "Diana" }; // 타입 생략 가능
-		Debug.Log($"랜덤으로 선택된 이름은 : {names.GetRandomMember()}");
+		Debug.Log($"랜덤으로 선택된 이름은 : {exampleNames.GetRandomMember()}");
+		Debug.Log($"랜덤으로 선택된 숫자는 : {exampleNumbers.GetRandomMember()}");
 
 		// var : 컴파일러가 변수의 타입을 추론하도록 하는 키워드
 		// new GameObject() : GameObject 타입의 인스턴스를 생성
 		// duck의 타입은 AddComponent<ExampleDuck>() 메서드에 의해 ExampleDuck으로 추론
 		var duck = new GameObject("Duck").AddComponent<ExampleDuck>();
 		// ExampleDuck은 ExampleBirdBase를 상속받으므로 CanFly 확장 메서드 사용 가능
-		Debug.Log($"오리에게 날 수 있냐고 물어보니? : {duck.CanFly()}");
+		Debug.Log($"{duck}아 날 수 있니? : {duck.CanFly()}");
+
+		var penguin = new GameObject("Penguin").AddComponent<ExamplePenguin>();
+		// ExamplePenguin은 ExampleBirdBase를 상속받으므로 CanFly 확장 메서드 사용 가능
+		Debug.Log($"{penguin}아 날 수 있니? : {penguin.CanFly()}");
 	}
 }
 
@@ -30,7 +38,7 @@ public static class ExtensionMethods
 	public static float GetLargest(this Vector3 v)
 	{
 		float largest = v.x;
-		// {}(대활호)의 내용이 한줄일 경우 {} 생략 가능
+		// {}(중괄호)의 내용이 한줄일 경우 {} 생략 가능
 		if (v.y > largest) largest = v.y;
 		if (v.z > largest) largest = v.z;
 		return largest;
@@ -52,8 +60,8 @@ public static class ExtensionMethods
 
 	// 제네릭과 익스텐션 메서드의 결합 2
 	// ExampleBirdBase를 상속받는 모든 타입에 대해 CanFly 확장 메서드 정의
-	public static bool CanFly<T>(this T a) where T : ExampleBirdBase
+	public static bool CanFly<T>(this T bird) where T : ExampleBirdBase
 	{
-		return a.GetComponent<IFlyable>() != null;
+		return bird.GetComponent<IFlyable>() != null;
 	}
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d7f42167bb0cc4caa5e71ed9865169, type: 3}
   m_Name: PoolingDataSO
   m_EditorClassIdentifier: Assembly-CSharp::PoolingDataSO
-  <PoolingObject>k__BackingField: {fileID: 6307092797876074900, guid: 083d604ed32a4f348877346e9a427215, type: 3}
+  <PoolingObject>k__BackingField: {fileID: 8875776760221455198, guid: 8909e308dd2928d48ac20676f5a58c58, type: 3}
   <InitialPoolSize>k__BackingField: 10

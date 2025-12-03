@@ -12,13 +12,16 @@ public class DuckNest : MonoBehaviour
 	void SpawnDuck()
 	{
 		// 오리를 생성하고 자식으로 설정합니다.
-		FactoryPattern.Instance.CreateBird(BirdType.Duck, position, rotation, transform);
+		var duck = FactoryPattern.Instance.CreateBird(BirdType.Duck, position, rotation, transform);
+		duck.IntroduceYourSelf();
+	
 	}
 
 	[ContextMenu("Spawn Eagle")]
 	void SpawnEagle()
 	{
 		// 독수리를 생성하고 자식으로 설정하지 않습니다.
-		FactoryPattern.Instance.CreateBird(BirdType.Eagle, position, rotation);
+		var eagle = FactoryPattern.Instance.CreateBird(BirdType.Eagle, position, rotation);
+		eagle.IntroduceYourSelf();
 	}
 }

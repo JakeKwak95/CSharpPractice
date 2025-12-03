@@ -24,7 +24,7 @@ public class CSharpAttributes : MonoBehaviour
 
 	// Obsolete 어트리뷰트 : 더 이상 사용되지 않는 메서드임을 나타내며, 컴파일 시 경고 메시지를 출력
 	// 하지만 여전히 호출은 가능
-	[Obsolete("사용하지 않는 메서드 입니다. NewMethod 를 사용하세요.")]
+	[Obsolete("사용하지 않는 메서드 입니다. NewMethod() 를 사용하세요.")]
 	void ObsoleteMethod()
 	{
 		Debug.Log("이 메서드는 더 이상 사용되지 않습니다.");

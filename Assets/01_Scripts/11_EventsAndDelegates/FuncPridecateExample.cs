@@ -63,8 +63,6 @@ public class FuncPridecateExample : MonoBehaviour
 
 	private char TwoParamMethod(string message, int index)
 	{
-		// char은 하나의 문자를 나타내는 데이터 타입입니다.
-		// string은 사실상 char의 배열이기 때문에, 인덱스를 사용하여 특정 위치의 문자를 가져올 수 있습니다.
 		char letter = message[index];
 		return letter;
 	}

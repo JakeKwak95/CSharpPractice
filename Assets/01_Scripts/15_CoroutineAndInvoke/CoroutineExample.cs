@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // 코루틴(Coroutine) : 특정 작업을 여러 프레임에 걸쳐 나누어 수행할 수 있게 해주는 기능
@@ -13,17 +14,43 @@ using UnityEngine;
 
 // 코루틴은 StopCoroutine 메서드를 통해 중지할 수 있음
 
+
 // 코루틴은 게임 오브젝트가 비활성화되거나 파괴될 때 자동으로 중지됨
 public class CoroutineExample : MonoBehaviour
 {
+
+	Coroutine coroutineToStop;
+
 	private void Start()
 	{
-		StartCoroutine(CoPrintNumbers(5));
-		StartCoroutine(CoChangeColor());
+		// StartCoroutine(ExampleCoroutine());
+		// StartCoroutine(CoPrintNumbers(5));
+		// StartCoroutine(CoChangeColor());
+
 		// 메서드 이름 문자열을 사용하여 코루틴 시작 가능
 		// 이 경우 매개변수 전달 불가
 		// nameof : 컴파일 시점에 메서드 이름을 문자열로 변환
 		// StartCoroutine(nameof(CoChangeColor));
+		// StartCoroutine("CoChangeColor");
+
+		coroutineToStop = StartCoroutine(CoPrintNumbers(10));
+		StartCoroutine(CoStop(coroutineToStop));
+
+
+	}
+
+	IEnumerator CoStop(Coroutine toStop)
+	{
+		yield return new WaitForSeconds(3f);
+		StopCoroutine(toStop);
+		Debug.Log("정지!");
+	}
+
+	private IEnumerator ExampleCoroutine()
+	{
+		Debug.Log("시작");
+		yield return new WaitForSeconds(.5f);
+		Debug.Log("0.5 초 후");
 	}
 
 	// 코루틴 메서드

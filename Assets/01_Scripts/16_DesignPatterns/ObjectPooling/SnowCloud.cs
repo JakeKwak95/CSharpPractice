@@ -3,7 +3,8 @@ using UnityEngine;
 // 오브젝트 풀링을 사용하여 눈송이를 생성하는 클래스
 public class SnowCloud : MonoBehaviour
 {
-	[SerializeField] float interval = 0.5f;
+	[SerializeField] float spawnSize = 5f;
+	[SerializeField] float interval = 0.1f;
 
 	void Start()
 	{
@@ -13,8 +14,7 @@ public class SnowCloud : MonoBehaviour
 
 	private void Snow()
 	{
-		var snowflake = ObjectPooling.Instance.GetObjectFromPool();
-		Vector2 randomPos = new Vector2(Random.Range(-5f, 5f), 5f);
-		snowflake.transform.position = randomPos;
+		Vector3 randomPos = new(Random.Range(-spawnSize, spawnSize), spawnSize, Random.Range(-spawnSize, spawnSize));
+		var snowflake = ObjectPooling.Instance.GetPooledObject(randomPos);
 	}
 }

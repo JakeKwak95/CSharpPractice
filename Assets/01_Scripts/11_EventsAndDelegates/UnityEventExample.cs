@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +9,7 @@ public class UnityEventExample : MonoBehaviour
 	public UnityEvent OnStart;
 	//  Action과 같이 매개 변수가 있는 이벤트를 정의 할 수 있습니다.
 	public UnityEvent<int> OnStartWithInt;
-	
+
 	public int exampleValue = 10;
 
 	private void Start()
@@ -53,6 +52,11 @@ public class UnityEventExample : MonoBehaviour
 	public void SayHi()
 	{
 		Debug.Log("안녕!");
+	}
+	
+	public void HowOldAmI(int age)
+	{
+		Debug.Log($"나는 {age}살이야!");
 	}
 
 }

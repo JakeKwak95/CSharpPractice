@@ -33,9 +33,9 @@ public class ActionExample : MonoBehaviour
 
 	private void Start()
 	{
-		noParamActionExample.Invoke();
-		oneParamFuncExample.Invoke(5.0f);
-		twoParamFuncExample.Invoke("abcdefg", 2);
+		noParamActionExample?.Invoke();
+		oneParamFuncExample?.Invoke(5.0f);
+		twoParamFuncExample?.Invoke("abcdefg", 2);
 	}
 
 	private void NoParamMethod()
